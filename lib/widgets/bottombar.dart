@@ -1,0 +1,74 @@
+import 'package:flutter/material.dart';
+
+
+import 'package:thefoodstore/home.dart';
+import 'package:thefoodstore/login.dart';
+import 'package:thefoodstore/page/delivery.dart';
+import 'package:thefoodstore/page/cart_page.dart';
+import 'package:thefoodstore/page/profile.dart';
+
+
+
+class HomeBottomNavigationScreen extends StatefulWidget {
+  @override
+  _HomeBottomNavigationScreenState createState() =>
+      _HomeBottomNavigationScreenState();
+}
+
+class _HomeBottomNavigationScreenState
+    extends State<HomeBottomNavigationScreen> {
+  final List<Widget> _children = [
+     HomePage(),
+     Cartpage(),
+      // OrderNumberPage(),
+      // Profilepage()
+      Signin(),
+
+
+    // SwiggyScreen(),
+    //  HomePage(),
+    // // SearchScreen(),
+    //  HomePage(),
+    // // CartScreen(),
+    //  HomePage(),
+    // AccountScreen()
+  ];
+
+  int selectedIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+   
+    return Scaffold(
+      body: _children[selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor:Colors.orange ,
+        unselectedItemColor: Colors.grey,
+        currentIndex: selectedIndex,
+        // selectedLabelStyle: labelTextStyle,
+        // unselectedLabelStyle: labelTextStyle,
+        onTap: (index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
+         
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_shopping_cart),
+            title: Text('CART'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            title: Text('Profile'),
+          ),
+        ],
+      ),
+    );
+  }
+}
