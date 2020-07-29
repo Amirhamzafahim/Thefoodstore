@@ -21,8 +21,8 @@ class _HomeBottomNavigationScreenState
      HomePage(),
      Cartpage(),
       // OrderNumberPage(),
-      // Profilepage()
-      Signin(),
+      Profilepage(),
+      // Signin(),
 
 
     // SwiggyScreen(),
@@ -42,7 +42,10 @@ class _HomeBottomNavigationScreenState
     return Scaffold(
       body: _children[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        
+        
         type: BottomNavigationBarType.fixed,
+
         selectedItemColor:Colors.orange ,
         unselectedItemColor: Colors.grey,
         currentIndex: selectedIndex,

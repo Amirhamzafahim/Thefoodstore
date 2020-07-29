@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thefoodstore/food_details.dart';
 
 class Menuwidget extends StatelessWidget {
   const Menuwidget({Key key}) : super(key: key);
@@ -81,24 +82,30 @@ class Menuwidget extends StatelessWidget {
                           fontWeight: FontWeight.w500)),
                 ),
                 Text("250 Grms"),
-                Container(
-                  alignment: Alignment.bottomRight,
-                  padding: EdgeInsets.only(right: 5),
-                  child: Container(
-                    height: 28,
-                    width: 28,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                     
-                        topLeft: Radius.circular(5),
-                        bottomRight: Radius.circular(5)
+               InkWell (
+                 onTap: (){
+                      Navigator.push(context,MaterialPageRoute(builder:(context)=>FoodDetails() ) );
+
+                 },
+                                  child: Container(
+                    alignment: Alignment.bottomRight,
+                    padding: EdgeInsets.only(right: 5),
+                    child: Container(
+                      height: 28,
+                      width: 28,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                       
+                          topLeft: Radius.circular(5),
+                          bottomRight: Radius.circular(5)
+                        ),
+                        color: Colors.orange,
                       ),
-                      color: Colors.orange,
-                    ),
-                    child: Icon(
-                      Icons.add,
-                      color:Colors.white ,
-                      size: 16,
+                      child: Icon(
+                        Icons.add,
+                        color:Colors.white ,
+                        size: 16,
+                      ),
                     ),
                   ),
                 ),
